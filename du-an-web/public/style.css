@@ -1,0 +1,647 @@
+/* ==================================================
+   1. THIẾT LẬP CHUNG CHO TOÀN BỘ TRANG WEB
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #292929;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.khung-noi-dung {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+
+/* ==================================================
+   2. ĐẦU TRANG: LOGO VÀ MENU ĐIỀU HƯỚNG
+   ================================================== */
+
+.dau-trang {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.dau-trang-noi-dung {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    flex-shrink: 0;
+    color: #202020;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #e85d2a;
+}
+
+.menu-dieu-huong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.menu-dieu-huong a {
+    color: #444444;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.menu-dieu-huong a:hover {
+    color: #e85d2a;
+}
+
+.nut-gio-hang {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    color: #ffffff;
+    background-color: #e85d2a;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+}
+
+.nut-gio-hang:hover {
+    background-color: #c94a1c;
+}
+
+
+/* ==================================================
+   3. BANNER GIỚI THIỆU VÀ NÚT MUA SẮM
+   ================================================== */
+
+.banner {
+    padding: 65px 0;
+    background-color: #fff4ed;
+}
+
+.banner-noi-dung {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.banner-van-ban {
+    max-width: 500px;
+}
+
+.nhan-banner {
+    margin-bottom: 12px;
+    color: #e85d2a;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.banner-van-ban h1 {
+    margin-bottom: 20px;
+    color: #222222;
+    font-size: clamp(36px, 5vw, 54px);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.mo-ta-banner {
+    max-width: 450px;
+    margin-bottom: 28px;
+    color: #666666;
+    font-size: 17px;
+}
+
+.banner-hinh-anh img {
+    aspect-ratio: 3 / 2;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.nut-chinh {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 24px;
+    color: #ffffff;
+    background-color: #e85d2a;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nut-chinh:hover {
+    background-color: #c94a1c;
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   4. TIÊU ĐỀ DÙNG CHUNG CHO CÁC KHU VỰC
+   ================================================== */
+
+.tieu-de-khu-vuc {
+    max-width: 650px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.nhan-khu-vuc {
+    margin-bottom: 8px;
+    color: #e85d2a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.tieu-de-khu-vuc h2,
+.van-ban-gioi-thieu h2 {
+    margin-bottom: 12px;
+    color: #242424;
+    font-size: 32px;
+}
+
+.tieu-de-khu-vuc>p:last-child {
+    color: #777777;
+    font-size: 15px;
+}
+
+
+/* ==================================================
+   5. DANH SÁCH SẢN PHẨM VÀ THẺ SẢN PHẨM
+   ================================================== */
+
+.khu-vuc-san-pham {
+    padding: 75px 0;
+    background-color: #ffffff;
+}
+
+.luoi-san-pham {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.the-san-pham {
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.the-san-pham:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+}
+
+.anh-san-pham {
+    aspect-ratio: 4 / 3;
+    background-color: #f4f4f4;
+    object-fit: cover;
+}
+
+.thong-tin-san-pham {
+    padding: 20px;
+}
+
+.thong-tin-san-pham h3 {
+    margin-bottom: 8px;
+    color: #292929;
+    font-size: 18px;
+}
+
+.mo-ta-san-pham {
+    min-height: 48px;
+    margin-bottom: 12px;
+    color: #777777;
+    font-size: 14px;
+}
+
+.gia-san-pham {
+    margin-bottom: 18px;
+    color: #e85d2a;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.nut-them-gio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 14px;
+    color: #e85d2a;
+    background-color: #fff0e8;
+    border: 1px solid #ffd7c5;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    transition: color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.nut-them-gio:hover {
+    color: #ffffff;
+    background-color: #e85d2a;
+}
+
+
+/* ==================================================
+   6. KHU VỰC GIỎ HÀNG
+   ================================================== */
+
+.khu-vuc-gio-hang {
+    padding: 70px 0;
+    background-color: #f8f8f8;
+}
+
+.gio-hang-trong {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 38px 24px;
+    background-color: #ffffff;
+    border: 1px dashed #d8d8d8;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.bieu-tuong-gio-hang {
+    margin-bottom: 12px;
+    font-size: 44px;
+}
+
+.gio-hang-trong h3 {
+    margin-bottom: 10px;
+    color: #292929;
+    font-size: 21px;
+}
+
+.gio-hang-trong p {
+    margin-bottom: 22px;
+    color: #777777;
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   7. KHU VỰC GIỚI THIỆU CỬA HÀNG
+   ================================================== */
+
+.khu-vuc-gioi-thieu {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.gioi-thieu-noi-dung {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.anh-gioi-thieu img {
+    aspect-ratio: 10 / 7;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.van-ban-gioi-thieu h2 {
+    margin-bottom: 20px;
+}
+
+.van-ban-gioi-thieu>p:not(.nhan-khu-vuc) {
+    margin-bottom: 15px;
+    color: #666666;
+    font-size: 15px;
+}
+
+.nut-phu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    margin-top: 8px;
+    padding: 10px 20px;
+    color: #e85d2a;
+    border: 1px solid #e85d2a;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.nut-phu:hover {
+    color: #ffffff;
+    background-color: #e85d2a;
+}
+
+
+/* ==================================================
+   8. KHU VỰC THÔNG TIN LIÊN HỆ
+   ================================================== */
+
+.khu-vuc-lien-he {
+    padding: 75px 0;
+    background-color: #fff8f4;
+}
+
+.luoi-lien-he {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.the-lien-he {
+    padding: 28px 20px;
+    background-color: #ffffff;
+    border: 1px solid #f0e5df;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.bieu-tuong-lien-he {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 14px;
+    color: #e85d2a;
+    background-color: #fff0e8;
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+.the-lien-he h3 {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.the-lien-he p {
+    color: #777777;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+
+/* ==================================================
+   9. CHÂN TRANG VÀ THÔNG TIN BẢN QUYỀN
+   ================================================== */
+
+.chan-trang {
+    padding: 35px 0 25px;
+    color: #dddddd;
+    background-color: #222222;
+    text-align: center;
+}
+
+.chan-trang-noi-dung>p {
+    margin-top: 10px;
+    color: #bbbbbb;
+    font-size: 14px;
+}
+
+.logo-chan-trang {
+    display: inline-block;
+    color: #ffffff;
+}
+
+.ban-quyen {
+    padding-top: 18px;
+    border-top: 1px solid #444444;
+    font-size: 12px !important;
+}
+
+
+/* ==================================================
+   10. RESPONSIVE: MÁY TÍNH BẢNG VÀ MÀN HÌNH VỪA
+   ================================================== */
+
+@media (max-width: 900px) {
+    .dau-trang-noi-dung {
+        gap: 16px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .menu-dieu-huong {
+        gap: 14px;
+    }
+
+    .menu-dieu-huong a {
+        font-size: 13px;
+    }
+
+    .banner-noi-dung,
+    .gioi-thieu-noi-dung {
+        gap: 30px;
+    }
+
+    .luoi-san-pham {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ==================================================
+   11. RESPONSIVE: ĐIỆN THOẠI
+   Các khu vực và danh sách tự xếp thành một cột.
+   ================================================== */
+
+@media (max-width: 600px) {
+    html {
+        scroll-padding-top: 120px;
+    }
+
+    .khung-noi-dung {
+        width: calc(100% - 30px);
+    }
+
+    /* Đầu trang: logo phía trên, menu cuộn ngang bên dưới */
+    .dau-trang-noi-dung {
+        min-height: auto;
+        padding-top: 14px;
+        padding-bottom: 12px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .nut-gio-hang {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    .menu-dieu-huong {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        gap: 20px;
+        overflow-x: auto;
+        padding: 3px 0 5px;
+        white-space: nowrap;
+        scrollbar-width: thin;
+    }
+
+    .menu-dieu-huong a {
+        flex-shrink: 0;
+        font-size: 13px;
+    }
+
+    /* Banner: hình ảnh và nội dung xếp thành một cột */
+    .banner {
+        padding: 42px 0;
+    }
+
+    .banner-noi-dung {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .banner-van-ban h1 {
+        font-size: 38px;
+    }
+
+    .mo-ta-banner {
+        font-size: 15px;
+    }
+
+    .banner-hinh-anh img {
+        border-radius: 12px;
+    }
+
+    /* Tiêu đề khu vực: giảm kích thước để vừa màn hình */
+    .tieu-de-khu-vuc {
+        margin-bottom: 28px;
+    }
+
+    .tieu-de-khu-vuc h2,
+    .van-ban-gioi-thieu h2 {
+        font-size: 26px;
+    }
+
+    /* Sản phẩm: mỗi hàng chỉ có một thẻ */
+    .khu-vuc-san-pham {
+        padding: 50px 0;
+    }
+
+    .luoi-san-pham {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .thong-tin-san-pham {
+        padding: 18px;
+    }
+
+    .mo-ta-san-pham {
+        min-height: auto;
+    }
+
+    /* Giỏ hàng: nội dung xếp dọc */
+    .khu-vuc-gio-hang {
+        padding: 50px 0;
+    }
+
+    .gio-hang-trong {
+        padding: 30px 18px;
+    }
+
+    /* Giới thiệu: hình ảnh ở trên, văn bản ở dưới */
+    .khu-vuc-gioi-thieu {
+        padding: 50px 0;
+    }
+
+    .gioi-thieu-noi-dung {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Liên hệ: các thẻ xếp thành một cột */
+    .khu-vuc-lien-he {
+        padding: 50px 0;
+    }
+
+    .luoi-lien-he {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .the-lien-he {
+        padding: 24px 18px;
+    }
+
+    /* Chân trang: căn chỉnh nội dung phù hợp màn hình nhỏ */
+    .chan-trang {
+        padding: 30px 0 22px;
+    }
+
+    .chan-trang-noi-dung>p {
+        font-size: 13px;
+    }
+}
